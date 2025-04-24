@@ -7,23 +7,33 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f1f3f6;
+      background: linear-gradient(135deg, #00c896, #007bff);
+      margin: 0;
       padding: 30px;
       display: flex;
       justify-content: center;
     }
 
     .container {
-      background-color: #ffffff;
+      background-color: #00b4d8;
       border-radius: 16px;
       padding: 25px 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       max-width: 500px;
       width: 100%;
     }
+  
+    .logo {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  max-width: 200px;
+  height: auto;
+}
+    
 
     h2 {
-      color: #0d9fb8;
+      color: #ffffff;
       text-align: center;
       margin-bottom: 25px;
     }
@@ -45,15 +55,22 @@
     }
 
     button {
-      background-color: #0d9fb8;
+      background-color: #00a57a;
       color: white;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s ease;
+      margin-top: 15px;
     }
 
     button:hover {
-      background-color: #0b8da3;
+      background-color: #008e69;
+    }
+
+    #ajukanBtn {
+      background-color: #0077b6;
+      font-size: 0.9rem;
+      padding: 8px;
     }
 
     .hasil {
@@ -88,11 +105,33 @@
       font-size: 0.9rem;
       display: none;
     }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      input, select, button {
+        font-size: 0.95rem;
+        padding: 8px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      #ajukanBtn {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Kalkulator Cicilan Koperasi</h2>
+    <h2>Kalkulator Cicilan Sentra Finance</h2>
+    <img src="logo sentra finance2.PNG" alt="Logo Sentra Finance" class="logo" />
+
 
     <label for="pinjaman">Jumlah Pinjaman (Rp):</label>
     <input type="text" id="pinjaman" placeholder="Contoh: 3.000.000" />
@@ -116,6 +155,7 @@
       <p>Biaya Admin: <span id="admin">-</span></p>
       <p>Biaya Tambahan Tanpa Jaminan: <span id="tambahan">-</span></p>
       <p><strong>Total Diterima Nasabah:</strong> <span id="totalDiterima">-</span></p>
+      <button id="ajukanBtn" onclick="window.open('https:https://docs.google.com/forms/d/e/1FAIpQLSeQc9PkZFWuXQJ1etZAWtb9US2ijRI_1341A_NYu9tbzENqnw/viewform', '_blank')">Ajukan Sekarang</button>
     </div>
   </div>
 
