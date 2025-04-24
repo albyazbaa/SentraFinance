@@ -83,6 +83,36 @@
       margin: 6px 0;
       font-weight: 500;
     }
+    .form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#jaminanSection {
+  display: none;
+  flex-direction: column; /* biar stack ke bawah di mobile */
+  gap: 8px;
+  margin-top: 12px;
+}
+
+@media (min-width: 600px) {
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-group label {
+    flex: 1;
+    margin-right: 12px;
+  }
+
+  .form-group input,
+  .form-group select {
+    flex: 2;
+  }
+}
 
     #jaminanSection {
       display: none;
@@ -132,16 +162,18 @@
     <h2>Kalkulator Cicilan Sentra Finance</h2>
     <img src="logo sentra finance2.PNG" alt="Logo Sentra Finance" class="logo" />
 
-
+    <div clas="form-group">
     <label for="pinjaman">Jumlah Pinjaman (Rp):</label>
     <input type="text" id="pinjaman" placeholder="Contoh: 3.000.000" />
-
+</div>
+    <div class="form-group">
     <label for="tenor">Tenor Cicilan (bulan):</label>
     <select id="tenor">
       <option value="">Pilih tenor</option>
     </select>
-
-    <div id="jaminanSection">
+    </div>
+    
+    <div id="jaminanSection" class="form-group">
       <label><input type="radio" name="jaminan" value="ada" /> Ada jaminan</label>
       <label><input type="radio" name="jaminan" value="tidak" /> Tidak ada jaminan</label>
     </div>
