@@ -12,30 +12,40 @@
       padding: 30px;
       display: flex;
       justify-content: center;
+      min-height: 100vh;
     }
 
     .container {
-      background-color: #00b4d8;
+      background-color: #ffffff; /* putih bersih */
       border-radius: 16px;
       padding: 25px 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       max-width: 500px;
       width: 100%;
     }
-  
+
+    .logo-wrapper {
+      background-color: rgba(0, 0, 0, 0.5); /* hitam transparan */
+      padding: 12px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px auto;
+      max-width: 250px;
+    }
+
     .logo {
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-  max-width: 200px;
-  height: auto;
-}
-    
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     h2 {
-      color: #ffffff;
+      color: #007bff;
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      font-weight: bold;
     }
 
     label {
@@ -83,43 +93,18 @@
       margin: 6px 0;
       font-weight: 500;
     }
+
     .form-group {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-}
-
-#jaminanSection {
-  display: none;
-  flex-direction: column; /* biar stack ke bawah di mobile */
-  gap: 8px;
-  margin-top: 12px;
-}
-
-@media (min-width: 600px) {
-  .form-group {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .form-group label {
-    flex: 1;
-    margin-right: 12px;
-  }
-
-  .form-group input,
-  .form-group select {
-    flex: 2;
-  }
-}
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+    }
 
     #jaminanSection {
       display: none;
       margin-top: 15px;
       gap: 10px;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
     #jaminanSection label {
@@ -134,6 +119,29 @@
       margin-top: 10px;
       font-size: 0.9rem;
       display: none;
+    }
+
+    @media (min-width: 600px) {
+      .form-group {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .form-group label {
+        flex: 1;
+        margin-right: 12px;
+      }
+
+      .form-group input,
+      .form-group select {
+        flex: 2;
+      }
+
+      #jaminanSection {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
 
     @media (max-width: 480px) {
@@ -160,20 +168,22 @@
 <body>
   <div class="container">
     <h2>Kalkulator Cicilan Sentra Finance</h2>
-    <img src="logo sentra finance2.PNG" alt="Logo Sentra Finance" class="logo" />
-
-    <div clas="form-group">
-    <label for="pinjaman">Jumlah Pinjaman (Rp):</label>
-    <input type="text" id="pinjaman" placeholder="Contoh: 3.000.000" />
-</div>
-    <div class="form-group">
-    <label for="tenor">Tenor Cicilan (bulan):</label>
-    <select id="tenor">
-      <option value="">Pilih tenor</option>
-    </select>
+    <div class="logo-wrapper">
+      <img src="logo sentra finance2.PNG" alt="Logo Sentra Finance" class="logo" />
     </div>
-    
-    <div id="jaminanSection" class="form-group">
+
+    <div class="form-group">
+      <label for="pinjaman">Jumlah Pinjaman (Rp):</label>
+      <input type="text" id="pinjaman" placeholder="Contoh: 3.000.000" />
+    </div>
+    <div class="form-group">
+      <label for="tenor">Tenor Cicilan (bulan):</label>
+      <select id="tenor">
+        <option value="">Pilih tenor</option>
+      </select>
+    </div>
+
+    <div id="jaminanSection">
       <label><input type="radio" name="jaminan" value="ada" /> Ada jaminan</label>
       <label><input type="radio" name="jaminan" value="tidak" /> Tidak ada jaminan</label>
     </div>
