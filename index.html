@@ -16,7 +16,7 @@
     }
 
     .container {
-      background-color: #ffffff; /* putih bersih */
+      background-color: #ffffff;
       border-radius: 16px;
       padding: 25px 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -25,7 +25,7 @@
     }
 
     .logo-wrapper {
-      background-color: rgba(0, 0, 0, 0.5); /* hitam transparan */
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 12px;
       border-radius: 12px;
       display: flex;
@@ -36,7 +36,7 @@
     }
 
     .logo {
-      width: 50%;  /* Mengurangi ukuran logo menjadi 50% */
+      width: 50%;
       height: auto;
       display: block;
     }
@@ -110,7 +110,7 @@
     #jaminanSection label {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px; /* Mengurangi jarak antara radio dan tulisan */
       font-weight: normal;
     }
 
@@ -163,13 +163,13 @@
         padding: 8px 10px;
       }
 
-      /* Mengurangi jarak antara radio button dan keterangan di handphone */
-      #jaminanSection label {
-        margin-bottom: 8px; /* Mengurangi jarak vertikal antar elemen */
-      }
-
       #jaminanSection {
         margin-top: 10px;
+      }
+
+      #jaminanSection label {
+        gap: 5px; /* Tambahan: memperkecil jarak icon dan teks */
+        margin-bottom: 8px;
       }
     }
   </style>
@@ -259,7 +259,6 @@
       const jaminan = document.querySelector('input[name="jaminan"]:checked');
 
       if (!pinjaman || !tenor) {
-        cicilanText.textContent =
         cicilanText.textContent = "Tidak ada pinjaman";
         adminText.textContent = "-";
         tambahanText.textContent = "-";
