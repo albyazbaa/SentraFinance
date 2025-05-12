@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -108,7 +108,7 @@
     <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Anda" required>
 
     <label for="nominal">Jumlah Pinjaman</label>
-    <input type="number" id="nominal" name="nominal" max="500000" placeholder="Contoh: 300000" required>
+    <input type="text" id="nominal" name="nominal" maxlength="7" placeholder="Contoh: 300.000" required>
 
     <label for="tanggalPembayaran">Tanggal Pembayaran</label>
     <input type="date" id="tanggalPembayaran" name="tanggalPembayaran" required>
@@ -134,15 +134,43 @@
   </div>
 
   <script>
+    // Fungsi untuk format Rupiah otomatis
+    document.getElementById('nominal').addEventListener('input', function(e) {
+      // Hapus semua karakter non-digit
+      let value = this.value.replace(/[^\d]/g, '');
+      
+      // Konversi ke number
+      let numValue = parseInt(value) || 0;
+      
+      // Batasi maksimal 500.000
+      if (numValue > 500000) {
+        numValue = 500000;
+      }
+      
+      // Format ke Rupiah
+      this.value = formatRupiahInput(numValue);
+    });
+
+    // Format untuk input (tanpa Rp)
+    function formatRupiahInput(angka) {
+      return angka.toLocaleString('id-ID');
+    }
+
+    // Format untuk output (dengan Rp)
     function formatRupiah(angka) {
       return angka.toLocaleString('id-ID');
+    }
+
+    // Fungsi untuk mengubah format Rupiah kembali ke angka
+    function unformatRupiah(str) {
+      return parseInt(str.replace(/\./g, '')) || 0;
     }
 
     function hitungDana() {
       const inputNama = document.getElementById("nama");
       const nama = inputNama.value.trim();
       const inputNominal = document.getElementById("nominal");
-      const jumlah = parseInt(inputNominal.value);
+      const jumlah = unformatRupiah(inputNominal.value);
       const inputTanggal = document.getElementById("tanggalPembayaran");
       const tanggalPembayaran = inputTanggal.value;
       const inputRekening = document.getElementById("rekening");
@@ -155,7 +183,7 @@
         return;
       }
 
-      if (isNaN(jumlah) || jumlah <= 0 || jumlah > 500000) {
+      if (jumlah <= 0 || jumlah > 500000) {
         alert("Masukkan jumlah pinjaman yang valid (maksimal Rp500.000)");
         return;
       }
@@ -166,7 +194,7 @@
       // Tampilkan hasil perhitungan di halaman
       document.getElementById("potongan").textContent = formatRupiah(potongan);
       document.getElementById("diterima").textContent = formatRupiah(diterima);
-      document.getElementById("dikembalikan").textContent = formatRupiah(jumlah); // ditambahkan
+      document.getElementById("dikembalikan").textContent = formatRupiah(jumlah);
       document.getElementById("resultBox").style.display = "block";
 
       // Update link WhatsApp dengan pesan otomatis
@@ -181,7 +209,7 @@
         `Nomor rekening/E-Wallet: ${rekening}.\n` +
         `Jenis Rekening/E-Wallet: ${jenisRekening}.`
       );
-      whatsappLink.href = `https://wa.me/6281290413077?text=${message}`; // Ganti dengan nomor WhatsApp yang sesuai
+      whatsappLink.href = `https://wa.me/6281290413077?text=${message}`;
     }
   </script>
 </body>
