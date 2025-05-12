@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kalkulator Cicilan Koperasi</title>
+  <title>Halaman Awal</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,6 +12,7 @@
       padding: 30px;
       display: flex;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
     }
 
@@ -20,8 +21,15 @@
       border-radius: 16px;
       padding: 25px 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 500px;
+      max-width: 400px;
       width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #007bff;
     }
 
     .logo-wrapper {
@@ -32,265 +40,83 @@
       justify-content: center;
       align-items: center;
       margin: 0 auto 20px auto;
-      max-width: 250px;
+      max-width: 220px;
     }
 
-    .logo {
-      width: 50%;
+    .logo-wrapper img {
+      max-width: 100%;
       height: auto;
-      display: block;
     }
 
-    h2 {
-      color: #007bff;
-      text-align: center;
-      margin-bottom: 20px;
-      font-weight: bold;
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 20px;
     }
 
-    label {
-      font-weight: 500;
-      margin-top: 15px;
-      display: block;
-      color: #333;
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #00a57a;
+    .button {
+      background: linear-gradient(90deg, #00c896, #007bff);
+      border: none;
+      border-radius: 10px;
       color: white;
+      padding: 14px 20px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 15px;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
 
-    button:hover {
-      background-color: #008e69;
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
-    #ajukanBtn {
-      background-color: #0077b6;
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-
-    .hasil {
-      margin-top: 25px;
-      padding-top: 15px;
-      border-top: 1px solid #eee;
-    }
-
-    .hasil p {
-      margin: 6px 0;
-      font-weight: 500;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #jaminanSection {
-      display: none;
-      margin-top: 15px;
-      gap: 10px;
-      flex-direction: column;
-    }
-
-    #jaminanSection label {
-      display: flex;
-      align-items: center;
-      gap: 5px; /* Mengurangi jarak antara radio dan tulisan */
-      font-weight: normal;
-    }
-
-    #peringatan {
-      color: #d62828;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      display: none;
-    }
-
-    @media (min-width: 600px) {
-      .form-group {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .form-group label {
-        flex: 1;
-        margin-right: 12px;
-      }
-
-      .form-group input,
-      .form-group select {
-        flex: 2;
-      }
-
-      #jaminanSection {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
+    .desc {
+      font-size: 13px;
+      color: #444;
+      margin-top: 6px;
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 20px 15px;
+      h1 {
+        font-size: 22px;
       }
 
-      input, select, button {
-        font-size: 0.95rem;
-        padding: 8px;
+      .button {
+        font-size: 15px;
+        padding: 12px 16px;
       }
 
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      #ajukanBtn {
-        font-size: 0.85rem;
-        padding: 8px 10px;
-      }
-
-      #jaminanSection {
-        margin-top: 10px;
-      }
-
-      #jaminanSection label {
-        gap: 0px; /* Tambahan: memperkecil jarak icon dan teks */
-        margin-bottom: 8px;
+      .desc {
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Kalkulator Cicilan Sentra Finance</h2>
+    <h1>Selamat Datang</h1>
     <div class="logo-wrapper">
-      <img src="logo sentra finance2.PNG" alt="Logo Sentra Finance" class="logo" />
+      <img src="logo sentra finance2.PNG" alt="Logo Aplikasi" />
     </div>
 
-    <div class="form-group">
-      <label for="pinjaman">Jumlah Pinjaman (Rp):</label>
-      <input type="text" id="pinjaman" placeholder="Contoh: 3.000.000" />
-    </div>
-    <div class="form-group">
-      <label for="tenor">Tenor Cicilan (bulan):</label>
-      <select id="tenor">
-        <option value="">Pilih tenor</option>
-      </select>
-    </div>
-
-    <div id="jaminanSection">
-      <label><input type="radio" name="jaminan" value="ada" /> Ada jaminan</label>
-      <label><input type="radio" name="jaminan" value="tidak" /> Tidak ada jaminan</label>
-    </div>
-
-    <div id="peringatan">⚠ Biaya tambahan 2.5% akan dikenakan karena tidak ada jaminan.</div>
-
-    <button onclick="hitungSemua()">Hitung</button>
-
-    <div class="hasil">
-      <p>Cicilan per bulan: <span id="cicilan">-</span></p>
-      <p>Biaya Admin: <span id="admin">-</span></p>
-      <p>Biaya Tambahan Tanpa Jaminan: <span id="tambahan">-</span></p>
-      <p><strong>Total Diterima Nasabah:</strong> <span id="totalDiterima">-</span></p>
-      <a href="https://forms.gle/z9xF7sEnoPs3NzWw8" target="_blank">
-      <button id="ajukanBtn">Ajukan Sekarang</button>
-      </a>
+    <div class="button-container">
+      <div>
+        <button class="button" onclick="location.href='kalkulator.html'">Dana Pinjam</button>
+        <p class="desc">Pinjaman lebih dari Rp 800.000 dengan berbagai tenor</p>
+      </div>
+      <div>
+        <button class="button" onclick="location.href='dana.cepat.html'">Dana Cepat</button>
+        <p class="desc">Pinjam Flexibel max Rp 500.000 tanpa bunga</p>
+      </div>
+      <div>
+        <button class="button" onclick="location.href='cicil.barang.html'">Cicil Barang</button>
+        <p class="desc">Cicil Barang lebih mudah, Cicilan lebih murah</p>
+      </div>
     </div>
   </div>
-
-  <script>
-    const pinjamanInput = document.getElementById("pinjaman");
-    const tenorSelect = document.getElementById("tenor");
-    const cicilanText = document.getElementById("cicilan");
-    const adminText = document.getElementById("admin");
-    const tambahanText = document.getElementById("tambahan");
-    const totalDiterimaText = document.getElementById("totalDiterima");
-    const jaminanSection = document.getElementById("jaminanSection");
-    const peringatan = document.getElementById("peringatan");
-
-    function unformatRupiah(str) {
-      return parseInt(str.replace(/\./g, "")) || 0;
-    }
-
-    function formatRupiah(number) {
-      return number.toLocaleString("id-ID");
-    }
-
-    pinjamanInput.addEventListener("input", function () {
-      let num = unformatRupiah(this.value);
-      this.value = formatRupiah(num);
-
-      tenorSelect.innerHTML = '<option value="">Pilih tenor</option>';
-      if (num > 0) {
-        if (num <= 999000) addTenorOption(1);
-        else if (num <= 1999000) addTenorOption(1, 2);
-        else if (num <= 4999999) addTenorOption(1, 2, 3);
-        else addTenorOption(1, 2, 3, 4);
-      }
-
-      jaminanSection.style.display = num > 2999999 ? "flex" : "none";
-      peringatan.style.display = "none";
-    });
-
-    function addTenorOption(...options) {
-      options.forEach(val => {
-        const opt = document.createElement("option");
-        opt.value = val;
-        opt.textContent = val + " bulan";
-        tenorSelect.appendChild(opt);
-      });
-    }
-
-    function hitungSemua() {
-      const pinjaman = unformatRupiah(pinjamanInput.value);
-      const tenor = parseInt(tenorSelect.value);
-      const jaminan = document.querySelector('input[name="jaminan"]:checked');
-
-      if (!pinjaman || !tenor) {
-        cicilanText.textContent = "Tidak ada pinjaman";
-        adminText.textContent = "-";
-        tambahanText.textContent = "-";
-        totalDiterimaText.textContent = "-";
-        return;
-      }
-
-      let admin = 0;
-      if (pinjaman <= 800000) admin = 20000;
-      else if (pinjaman <= 1499000) admin = 50000;
-      else if (pinjaman <= 2000000) admin = 75000;
-      else if (pinjaman <= 4000000) admin = 100000;
-      else admin = pinjaman * 0.025;
-
-      let tambahan = 0;
-      if (pinjaman > 2999999 && jaminan && jaminan.value === "tidak") {
-        tambahan = pinjaman * 0.025;
-        peringatan.style.display = "block";
-      } else {
-        peringatan.style.display = "none";
-      }
-
-      const cicilan = (pinjaman / tenor) + (pinjaman / 10.6);
-      const totalDiterima = pinjaman - admin - tambahan;
-
-      cicilanText.textContent = "Rp " + formatRupiah(Math.round(cicilan));
-      adminText.textContent = "Rp " + formatRupiah(Math.round(admin));
-      tambahanText.textContent = "Rp " + formatRupiah(Math.round(tambahan));
-      totalDiterimaText.textContent = "Rp " + formatRupiah(Math.round(totalDiterima));
-    }
-  </script>
 </body>
 </html>
