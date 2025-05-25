@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -23,6 +23,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       max-width: 420px;
       width: 100%;
+      text-align: center;
     }
 
     h2 {
@@ -42,6 +43,7 @@
       font-size: 14px;
       display: block;
       margin-bottom: 5px;
+      text-align: left;
     }
 
     input {
@@ -87,6 +89,33 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
+    #jaminanSection {
+      display: none;
+      margin-bottom: 15px;
+    }
+
+    #jaminanSection label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    #peringatan {
+      color: #d62828;
+      font-size: 13px;
+      margin-top: -15px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    /* Logo styling */
+    .logo-img {
+      width: 170px; /* Ukuran presisi logo */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 480px) {
       h2 {
         font-size: 20px;
@@ -95,12 +124,17 @@
       button {
         font-size: 15px;
       }
+
+      .logo-img {
+        width: 120px; /* Ukuran logo lebih kecil pada handphone */
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Dana Cepat</h2>
+    <img src="logodapat.png" alt="Logo Aplikasi" class="logo-img" /> <!-- Logo image responsive -->
+
     <p>Pinjam flexible hingga Rp 500.000 tanpa bunga. Hanya biaya Jasa 10%!</p>
 
     <!-- Input Nama Pelanggan -->
