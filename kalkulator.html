@@ -23,6 +23,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       max-width: 420px;
       width: 100%;
+      text-align: center;
     }
 
     h2 {
@@ -42,6 +43,7 @@
       font-size: 14px;
       display: block;
       margin-bottom: 5px;
+      text-align: left;
     }
 
     input, select {
@@ -107,6 +109,14 @@
       display: none;
     }
 
+    /* Styling for logo image */
+    .logo-img {
+      max-width: 60%;
+      height: auto;
+      margin-bottom: 20px;
+      max-width: 150px; /* Adjust this to fit your design */
+    }
+
     @media (max-width: 480px) {
       h2 {
         font-size: 20px;
@@ -120,8 +130,11 @@
 </head>
 <body>
   <div class="container">
-    <h2>DANA PINJAM</h2>
+    <img src="logodapin.png" alt="Logo Aplikasi" class="logo-img" />
     <p>Pinjaman mudah dengan proses cepat. Tenor fleksibel hingga 4 bulan!</p>
+
+    <!-- Logo Image -->
+    
 
     <!-- Form Input -->
     <label for="namaPelanggan">Nama Lengkap</label>
