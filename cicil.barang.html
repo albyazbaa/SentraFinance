@@ -23,6 +23,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       max-width: 420px;
       width: 100%;
+      text-align: center;
     }
 
     h2 {
@@ -42,6 +43,7 @@
       font-size: 14px;
       display: block;
       margin-bottom: 5px;
+      text-align: left;
     }
 
     input, select {
@@ -87,6 +89,13 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
+    /* Logo Styling */
+    .logo-img {
+      width: 150px; /* Ukuran logo presisi */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 480px) {
       h2 {
         font-size: 20px;
@@ -95,12 +104,16 @@
       button {
         font-size: 15px;
       }
+
+      .logo-img {
+        width: 120px; /* Ukuran logo lebih kecil pada handphone */
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Cicil Barang - Sentra Finance</h2>
+    <img src="logocibar.png" alt="Logo Aplikasi" class="logo-img" /> <!-- Logo Cicil Barang -->
     <p>Cicil Barang Jadi Mudah, Cicilan Lebih Murah!</p>
 
     <!-- Form Input -->
